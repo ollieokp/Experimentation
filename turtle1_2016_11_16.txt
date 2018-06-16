@@ -1,0 +1,6 @@
+repeat 4 [ fd 30 rt 90 fd 30 rt 90 fd 30 rt 90
+  fd 30 ] fd 60 rt 90 fd 30 rt 90 fd 30 rt 90
+fd 60 rt 90 fd 30 rt 90 fd 30 fd 60 rt 90 fd 90
+rt 90 fd 30 rt 90 fd 30 rt 90 fd 30 lt 90 fd 30
+lt 90 fd 60 rt 90 fd 30 rt 90 fd 90 rt 90 fd 140
+rt 90 fd 30 rt 90 fd 30 rt 90 fd 30

@@ -1,0 +1,71 @@
+<html>
+<title>
+   game
+</title>
+<a href="directions.html">quit game</a>
+</html>
+<!doctype html><html itemscope="" itemtype="http://schema.org/SearchResultsPage" lang="en">
+<head>
+   <meta charset="utf-8"/>
+</head>
+<body>
+   <p>
+      <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+         <circle id="person" cx="50" cy="50" r="10"/>
+         <circle id="target" cx="100" cy="100" r="10" fill="red"/>
+      </svg> 
+      <button onclick="moveLeft()">Left</button>
+      <button onclick="moveRight()">right</button>
+      <button onclick="moveUp()">up</button>
+      <button onclick="movedown()">down</button>
+   </p>
+   <script>
+      var person = document.getElementById("person");
+      var target = document.getElementById("target");
+      var svgHeight = 200;
+      var svgWidth = 200;
+      
+      function moveLeft() {
+         person.setAttribute("cx",Number(person.getAttribute("cx")) - 10);
+         logPerson();
+      }
+      function moveRight() {
+         person.setAttribute("cx",Number(person.getAttribute("cx")) + 10);
+         logPerson();
+      }
+      function moveUp() {
+         person.setAttribute("cy",Number(person.getAttribute("cy")) - 10);
+         logPerson();
+      }
+      function movedown() {
+         person.setAttribute("cy",Number(person.getAttribute("cy")) + 10);
+         logPerson();
+      }
+      function logPerson() {
+         //console.log(person.attributes);      
+      }
+      
+      function moveTarget() {
+         var x = Number(target.getAttribute("cx"));
+         var y = Number(target.getAttribute("cy"));
+         
+         x = x + 3;
+         y = y + 1;
+         
+         x = wrapAround(x,svgWidth);
+         y = wrapAround(y,svgHeight);
+         
+         target.setAttribute("cx", x);
+         target.setAttribute("cy", y);
+      }
+      
+      function wrapAround(x,limit) {
+         if ( x < 0 ) x = limit;
+         if ( x > limit ) x = 0;
+         return x;
+      }
+      
+      var targetStepping = setInterval(moveTarget, 50);
+   </script>
+    
+</body>

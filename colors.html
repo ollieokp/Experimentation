@@ -1,0 +1,20 @@
+<script>
+
+function back_change(color){
+   document.body.style.backgroundColor=color;
+}
+
+function display(t){
+   alert("i'm alerting red fron here; " + t);
+}
+</script>
+<html>
+<body onload="back_change('black')">
+   <button style="height:30px;width:100px" onclick='alert("red")'>direct call</button>
+   <button style="height:30px;width:100px" onclick='display("passed in")'>uses function</button>
+   <button style="height:30px;width:100px" onclick='back_change("blue");display("different passed in")'>uses function 2</button>
+   <button style="height:30px;width:100px" onclick='back_change("red")'>background red</button>
+   <button style="height:30px;width:100px" onclick='back_change("black")'>background black</button>
+   <button style="height:30px;width:100px" onclick='back_change("PURPLE")'>background purple</button>
+</body>
+</html>
