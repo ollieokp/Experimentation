@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"/>
+</head>
+<body>
+   <canvas id="canvas" width="400" height="400"></canvas>
+   <script>
+      "use strict";
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      
+      function move_snake(direction1,speed1,x1,y1) {
+         console.log("moving", direction1, speed1, x1, y1);
+         if ("up" == direction1) {
+            y1=y1-speed1;
+         }
+         else if ("down" == direction1) {
+            y1=y1+speed1;
+         }
+         else if ("left" == direction1) {
+            x1=x1-speed1;
+         }
+         else if ("right" == direction1) {
+            x1=x1+speed1;
+         }
+         
+         //x1 = x1+speed1;
+         //y1 = y1+speed1;
+         return {x: x1, y: y1};
+      }
+      
+      function draw_snake(length,x,y) {
+         var max = length;
+         for(var i = 0; i < max; i++) {
+            ctx.fillRect(x+i*10,y+i*10,10,10);  
+         }
+      }
+      
+      var speed = 1;
+      var x = 200; // where the snake is, horizontally
+      var y = 200; // where the snake is, vertically
+      var length = 1;   
+
+      // this sets the game to ticking
+      var ticking = setInterval(function (){
+         ctx.clearRect(0,0,400,400);
+         //get longer every time i eat an apple
+         //length = length+1;
+        
+         // move snake to new location, assign new location to x,y
+         var newXY = move_snake("left",speed,x,y);
+         x = newXY["x"];
+         y = newXY["y"];
+         
+         // make the snake go faster
+         speed=speed+1;
+         
+         // draw snake at x,y
+         draw_snake(length,x,y);
+      },500 );
+   </script>
+   <a href="snake1.html">back</a>
+</body>
+</html>
