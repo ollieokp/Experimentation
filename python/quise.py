@@ -15,7 +15,7 @@ else:
     print("wrong")
 
 print ("game 3")
-name=input("what year was obama elected ")
+name=input("what year was obama elected president ")
 if name == "2008":
     print ("corect")
 else:
@@ -24,15 +24,18 @@ else:
 # levle 2 on five
 
 print ("game 4")
-name=input("how fast can deer run ")
+name=input("in miles per hour how fast can deer run ")
 if name == "50 miles per hour":
     print ("corect")
 else:
     print ("wrong")
 
 print ("game 5")
-name=input("how much food does a person eat a day ")
+name=input("in pounds how much food does a person eat a day ")
 if name == "5 pounds":
     print ("corect")
 else:
-    print ("wrong")    
+    print ("wrong")
+print ("level 2")
+print ("game 1")
+    
